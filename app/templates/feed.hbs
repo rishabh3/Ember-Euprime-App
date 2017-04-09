@@ -1,0 +1,97 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="menu-collapse">
+
+      <button {{action 'deleteSession'}} on='click' class="btn btn-default" style="float : right;font-size:20px;">Logout</button>
+    </div>
+  </div>
+</nav>
+<hr/>
+<h2 style="margin-left : 95px;">Welcome {{stats.uname}},</h2>
+<hr/>
+<br/><hr/>
+
+<div id="div12">
+        <center><button {{action 'showdetail'}} class="btn btn-default" id="btn12" on="click">Show Details</button></center>
+        <div id="div2" style="display : none">
+                <center>
+                        <h4>Database Name : <i>{{dbname}}</i></h4>
+                        <h4>Doc_Count : <i>{{count}}</i></h4>
+                </center>
+        </div>
+</div>
+<br/><hr/>
+<div id = "div4">
+<form class="form-horizontal" >
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="title">Title:</label>
+    <div class="col-sm-3">
+      {{input type="text" class="form-control" id="title" placeholder="Enter Title to search for a post"
+      value=title}}<br/><br/>
+      <button {{action 'search'}} class="btn btn-default" on="submit">Search</button>
+     </div>
+  </div>
+</form>
+
+<hr/>
+        <div id = "div1">
+                <h3><u>Title</u> : <center><h4><i>{{posttitle}}</i></h4></center></h3><hr/>
+                <h3><u>Description</u> : <center><h4><i>{{postdes}}</i></h4></center></h3><hr/>
+                <h3><u>Author's Name</u> : <center><h4><i>{{postaname}}</i></h4></center></h3><hr/>
+                <button class="btn btn-default" {{action 'edit'}} style="margin-left : 365px;">Edit/Create</button><hr/>
+                <button class="btn btn-default" {{action 'deletePost'}} style="margin-left : 389px;">Delete</button>
+        </div>
+        <br/><br/><br/><br/>
+        <div id='frm1' style="display:none">
+                <center>
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for="title">Title:</label>
+                    <div class="col-sm-5">
+                      {{input type="text" class="form-control" id="title1" placeholder="Enter Title"
+                      value=title}}
+                     </div>
+                  </div>
+                  <hr/>
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for="des">Description:</label>
+                    <div class="col-sm-5">
+                      {{textarea type="text" class="form-control" id="des" placeholder="Enter Description"
+                      value=des}}
+                    </div>
+                  </div>
+                  <hr/>
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for="name">Name:</label>
+                    <div class="col-sm-5">
+                      {{input type="text" class="form-control" id="authname" placeholder="Enter Author's Name"
+                      value=authname}}
+                    </div>
+                  </div>
+                  <hr/>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button {{action 'save'}} class="btn btn-default" on="submit">Save</button>
+                      <br/><br/>
+                      <button {{action 'cancel'}} class="btn btn-default" on="click">Cancel</button>
+                    </div>
+                  </div>
+                  <hr/>
+                </form>
+        </center>
+        </div>
+        <center><button {{action 'showerr'}} class="btn btn-default" id="btn11" on="click">Show Error</button></center>
+        <div id="div3" style="display : none">
+                <center><h3 id = "txt">{{info.error}}</h3></center>
+        </div><hr/>
+</div>
+{{outlet}}

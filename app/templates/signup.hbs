@@ -1,0 +1,57 @@
+<br/>
+<center><h3>{{info.error}}{{info.success}}</h3></center>
+<br/>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="name">Name:</label>
+    <div class="col-sm-3">
+      {{input type="text" class="form-control" id="name" placeholder="Enter Name"
+      value=name}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="uname">Username:</label>
+    <div class="col-sm-3">
+      {{input type="text" class="form-control" id="uname" placeholder="Enter Username"
+      value=uname}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Password:</label>
+    <div class="col-sm-3">
+      {{input type="password" class="form-control" id="pwd" placeholder="Enter password"
+      value=pwd}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="conpwd">Confirm password:</label>
+    <div class="col-sm-3">
+      {{input type="password" class="form-control" id="conpwd" placeholder="Re-Enter password"
+      value=conpwd}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">Email:</label>
+    <div class="col-sm-3">
+      {{input type="email" class="form-control" id="mail" placeholder="Enter email"
+      value=email}}
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button {{action 'login'}} class="btn btn-default" on="submit">Submit</button>
+      <br/>
+      <br/>
+      <button {{action 'cancel'}} class="btn btn-default" on="click">Cancel</button>
+    </div>
+  </div>
+</form>
+{{outlet}}

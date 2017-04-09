@@ -6,6 +6,13 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    localDb : 'data',
+    remoteDb : 'http://localhost:5984/test',
+    // contentSecurityPolicyHeader: 'Content-Security-Policy',
+    // contentSecurityPolicy: {
+    //   // ... other stuff here
+    //   remoteDb : 'http://localhost:5984/test',
+    // },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -20,6 +27,9 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      usingCors: true,
+      corsWithCreds: false,
+      apiURL: 'http://localhost:5984/test'
     }
   };
 
@@ -45,6 +55,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
-
+  ENV.localDb = 'test';
+  ENV.remoteDb = "http://localhost:5984/test";
   return ENV;
 };
