@@ -52,7 +52,7 @@ Specify what it takes to deploy your app.
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
 
-##Description:
+## Description:
   This is Ember Project supproted by couchdb in backend.In this project i have made a basic website which supports signing up and logging in using sessions stored in couchdb also the data stored in couchdb.Later after logging in you will be able to create ,read,update or delete posts.
   In this project i have made use of addons like ember-cli-sofa and ember-pouch both of which help in connecting to couch and carrying transactions.
   I have also made use of localstorage addon to store error messages for displaying it to user.
